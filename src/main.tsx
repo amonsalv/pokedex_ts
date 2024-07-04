@@ -1,14 +1,17 @@
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { Home, PokeDetail } from './pages';
+
+import './index.scss';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <h1>Home</h1>
+    element: <Home />,
   },
   {
     path: '/:pokeId',
-    element: <h1>Detalle</h1>
+    element: <PokeDetail />,
   }
 ]);
 
