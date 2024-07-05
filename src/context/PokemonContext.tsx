@@ -31,7 +31,8 @@ const PokemonProvider = ({ children }: any) => {
   const [types, setTypes] = useState([defaultState]);
   const [filterSelected, setFilterSelected] = useState(defaultState);
 
-  const changeTypeSelected = async (type: PokeType) => {
+  // Cambiamos el tipo de pokemon seleccionado
+  const changeTypeSelected = async (type: PokeType) => { 
     setFilterSelected(type);
 
     const { data } = await axios.get(type?.url!);
@@ -44,13 +45,15 @@ const PokemonProvider = ({ children }: any) => {
       : setPokemonsFiltered(allPokemons);
   };
 
+    // Hacemos una peticion a la API de Pokemon
   const getPokemonsType = async () => {
     // De aqui traemos todos los tipos disponibles
     const { data } = await axios.get("https://pokeapi.co/api/v2/type");
     setTypes([...types, ...data.results]);
   };
 
-  const getAllPokemons = async () => {
+  // Hacemos una peticion a la API de Pokemon, para traer todos los pokemons, usamos async porque es una peticion a una API externa y puede tardar en responder
+  const getAllPokemons = async () => { 
     const { data } = await axios.get(allPokemonsUrl);
 
     let pokemons = data?.results?.map(
@@ -62,6 +65,7 @@ const PokemonProvider = ({ children }: any) => {
     setPokemonsFiltered(pokemons);
   };
 
+  // Usamos useEffect para que se ejecute una vez que el componente se haya montado, y no se ejecute en cada renderizado
   useEffect(() => {
     getPokemonsType();
     getAllPokemons();

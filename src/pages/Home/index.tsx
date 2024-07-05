@@ -2,13 +2,13 @@ import { useContext } from "react";
 import { PokeballIconSmall } from "../../assets/pokeball";
 // import { Filters } from "../../components/Filters";
 // import { Pagination } from "../../components/Pagination";
-// import { PokemonList } from "../../components/PokemonList/PokemonList";
-import { PokemonContext } from "../../context/PokemonContext";
+import { PokemonList } from "../../components/PokemonList/PokemonList";
+// import { PokemonContext } from "../../context/PokemonContext";
 // import { usePagination } from "../../hooks/usePagination";
 import styles from "./styles.module.scss";
 
 export const Home = () => {
-  const { pokemonsFiltered } = useContext(PokemonContext);
+  // const { pokemonsFiltered } = useContext(PokemonContext);
 // //   const { page, nextPage, previousPage, backToHome } = usePagination();
 
 //   let perPage = 12;
