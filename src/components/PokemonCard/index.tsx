@@ -13,9 +13,10 @@ interface Props {
 export const PokemonCard = ({ url }: Props) => {
   const { pokemon } = usePokemon(url);
 
-  /* @ts-ignore */
-  const backgroundSelected = background[pokemon?.types[0]?.type?.name];
+  /* @ts-ignore */ //esto es para que no me marque error en la siguiente linea 
+  const backgroundSelected = background[pokemon?.types[0]?.type?.name]; //esto es para que me muestre el color de fondo de acuerdo al tipo de pokemon
 
+  //retornamos un Link que recibe un objeto con la propiedad to que es un string interpolado con el id del pokemon
   return (
     <Link to={`/${pokemon?.id}`} className={styles.pokeCard}>
       <div style={{ borderColor: backgroundSelected }} className={styles.top}>
