@@ -12,7 +12,8 @@ export type AllPokemonsResult = {
   url: string;
 };
 
-export type PokemonsByTypeResult = {
+//traemos los pokemones por tipo, en este caso el nombre y la url
+export type PokemonsByTypeResult = { 
   pokemon: {
     name: string;
     url: string;
