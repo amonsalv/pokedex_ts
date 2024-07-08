@@ -1,5 +1,5 @@
 //interfaces: son un tipo de dato que nos permite definir la estructura de un objeto, es decir, la forma en que se van a recibir los datos.
-//para esto hacesos un json to typescript en la pagina  y pegamos el json de la api de pokemons
+//para esto hacemos un json to typescript en la pagina  y pegamos el json de la api de pokemons
 
 //interfaces de la API de pokemons
 export interface IPokemons {

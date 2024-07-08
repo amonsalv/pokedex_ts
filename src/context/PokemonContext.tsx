@@ -6,25 +6,30 @@ import {
   PokeType,
 } from "../interfaces/types";
 
-interface PokemonContextProps {
+//este es el objeto que se va a exportar, que es un objeto con las propiedades types, filterSelected, pokemonsFiltered y changeTypeSelected
+interface PokemonContextProps { 
   types: PokeType[];
   filterSelected: PokeType;
   pokemonsFiltered: string[] | null;
   changeTypeSelected: (type: PokeType) => void;
 }
 
+//creamos un contexto de PokemonContextProps, que inicialmente es un objeto vacio
 export const PokemonContext = createContext<PokemonContextProps>(
   {} as PokemonContextProps
 );
 
+//este es el componente PokemonProvider que recibe un objeto children
 const PokemonProvider = ({ children }: any) => {
   let allPokemonsUrl = "https://pokeapi.co/api/v2/pokemon?limit=10000&offset=0";
 
+  // Inicializamos el estado de los tipos de pokemon, y el tipo seleccionado por defecto
   const defaultState: PokeType = {
     name: "All",
     url: allPokemonsUrl,
   };
 
+  // Inicializamos los estados de los tipos de pokemon, los pokemons filtrados, y el tipo seleccionado
   const [allPokemons, setAllPokemons] = useState(null);
   const [pokemonsFiltered, setPokemonsFiltered] = useState(null);
 
@@ -35,6 +40,7 @@ const PokemonProvider = ({ children }: any) => {
   const changeTypeSelected = async (type: PokeType) => { 
     setFilterSelected(type);
 
+    // Si el tipo seleccionado es diferente a "All", entonces hacemos una peticion a la API de Pokemon para traer los pokemons de ese tipo
     const { data } = await axios.get(type?.url!);
     let pokemons = data?.pokemon?.map(
       ({ pokemon }: PokemonsByTypeResult) => pokemon?.url

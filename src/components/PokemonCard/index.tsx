@@ -1,7 +1,7 @@
 import { usePokemon } from "../../hooks/usePokemon";
 import { background } from "../../utils/BackgroundsByType";
 import { Link } from "react-router-dom";
-// import { Loader } from "../Loader";
+import { Loader } from "../Loader";
 
 import styles from "./styles.module.scss";
 
@@ -32,7 +32,7 @@ export const PokemonCard = ({ url }: Props) => {
           />
         ) : (
           <div className={styles.loadingContainer}>
-            {/* <Loader color={backgroundSelected} /> */}
+            <Loader color={backgroundSelected} />
           </div>
         )}
       </div>
