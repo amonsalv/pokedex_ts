@@ -1,30 +1,44 @@
-# React + TypeScript + Vite
+# Pokedex TS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una Pokedex construida usando TypeScript, React, y otras tecnologías modernas de desarrollo web. Permite a los usuarios explorar información sobre Pokémon, incluyendo detalles como tipos, estadísticas y más.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Exploración de Pokémon**: Navega a través de una lista de Pokémon y obtén información detallada sobre cada uno.
+- **Filtrado y Búsqueda**: Filtra Pokémon por tipo o busca por nombre para encontrar tus favoritos rápidamente.
+- **Diseño Responsivo**: Accede a la Pokedex en cualquier dispositivo gracias a su diseño responsivo.
 
-## Expanding the ESLint configuration
+## Tecnologías Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- React
+- TypeScript
+- Axios para llamadas API
+- Sass para estilos
+- Vite como herramienta de construcción
 
-- Configure the top-level `parserOptions` property like this:
+## Instalación
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/amonsalv/pokedex_only_Ts
+
+2. Instala las dependencias:
+
+npm install
+
+3. Inicia el servidor de desarrollo:
+
+npm run dev
+
+Visita http://localhost:3000 en tu navegador para ver la aplicación.
+
+Contribuir
+Las contribuciones son bienvenidas. Por favor, revisa CONTRIBUTING.md para más detalles.
+
+Licencia
+Este proyecto está bajo la Licencia MIT. Ver el archivo LICENSE para más detalles.
+
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
