@@ -23,7 +23,7 @@ Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 1. Clona el repositorio:
 
 ```bash
-git clone https://github.com/amonsalv/pokedex_only_Ts
+git clone https://github.com/amonsalv/pokedex_ts
 
 2. Instala las dependencias:
 
